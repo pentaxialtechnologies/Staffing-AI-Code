@@ -51,7 +51,7 @@ export default function HomePage() {
 
   // ✅ Start payment function
   const startPayment = async () => {
-    const scriptLoaded = await loadRazorpayScript(process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || '');
+    const scriptLoaded = await loadRazorpayScript('https://checkout.razorpay.com/v1/checkout.js');
     if (!scriptLoaded) {
       alert("Failed to load Razorpay SDK. Please try again.");
       return;
@@ -66,7 +66,7 @@ export default function HomePage() {
     const order = await res.json();
 
     const options: RazorpayOptions = {
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || '',
+      key: 'EHOpdFDarGLsnPdwkI8y0Y5g',
       amount: order.amount,
       currency: order.currency,
       name: "My App",
