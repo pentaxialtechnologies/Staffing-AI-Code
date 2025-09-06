@@ -30,7 +30,6 @@ interface RazorpayOptions {
   theme: RazorpayTheme;
 }
 
-// ✅ Extend Window with Razorpay type
 declare global {
   interface Window {
     Razorpay: new (options: RazorpayOptions) => {
